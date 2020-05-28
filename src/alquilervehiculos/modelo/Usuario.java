@@ -68,8 +68,12 @@ public class Usuario {
     public String toString() {
         return nombre;
     }
+     public Object[] obtenerArregloUsuario(){
+        Object[] dato={getNombre(),getCedula(),getLogin(),getPasswd(),getTipoUsuario().toString()};
+        return dato;
+    }
     public Object[] obtenerArregloObjeto(){
-        Object[] data={ getCedula(), getNombre(),getLogin()};
+        Object[] data={ getCedula(),getNombre(),getLogin()};
         return data;
 }
 }

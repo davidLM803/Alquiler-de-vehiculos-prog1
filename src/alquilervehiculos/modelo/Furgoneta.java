@@ -31,7 +31,7 @@ public class Furgoneta extends AbstractVehiculo {
       @Override
     public Object getDiferente()
     {
-        String mensaje = "Tiene "+getCapacidad()+" de capcidad";
+        String mensaje = "Tiene "+getCapacidad()+" de capacidad";
         
         return mensaje;
     }
@@ -49,16 +49,16 @@ public class Furgoneta extends AbstractVehiculo {
         return precio;
     }
 
-//    @Override
-//    public void devolver(int kmFinal)
-//    {
-//        setEstado(true);
-//        int kilometrajeUsado = kmFinal-getKm();       
-//      String mensaje= "El usuario ha recorrido "+kilometrajeUsado+" kilometros"+
-//              "\nEl vheículo ha sido devuelto, su nuevo kilometraje es "+kmFinal;
-//         setKm(kmFinal);
-//        JOptionPane.showMessageDialog(null, mensaje);
-//    }
+    @Override
+    public void devolver(int kmFinal)
+    {
+        setEstado(true);
+        int kilometrajeUsado = kmFinal-getKm();       
+      String mensaje= "El usuario ha recorrido "+kilometrajeUsado+" kilometros"+
+              "\nEl vheículo ha sido devuelto, su nuevo kilometraje es "+kmFinal;
+         setKm(kmFinal);
+        JOptionPane.showMessageDialog(null, mensaje);
+    }
 
 
     @Override
@@ -70,11 +70,7 @@ public class Furgoneta extends AbstractVehiculo {
     
     @Override
     public Object[] obtenerArregloVehiculos() {
-    Object[] data={ getMatricula(), getKm(), getValorAlquiler(),getCapacidad()};
+    Object[] data={ getMatricula(), getKm(),isEstado(), getValorAlquiler(),getCapacidad()};
         return data;    }
 
-    @Override
-    public void devolver(int kmFinal) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

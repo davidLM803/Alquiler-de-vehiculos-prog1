@@ -25,8 +25,8 @@ public class Cliente implements Serializable  {
     }
 
     public Cliente(String text, String text0) {
-        obtenerArregloClientes()  ;  
-        }
+        
+            }
 
 
     public String getCedula() {
